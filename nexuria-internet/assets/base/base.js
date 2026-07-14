@@ -129,7 +129,7 @@ function afficher_document(texte) {
     explorateur.style.display = "none";
     afficheur.innerHTML = `
         <h1>${titre}</h1>
-        <p><strong>Accès :</strong> ${tag}</p>
+        <p><b>Accès :</b> ${tag}</p>
         <hr>
         ${texte_f}
     `;

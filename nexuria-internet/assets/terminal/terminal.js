@@ -192,7 +192,7 @@ async function lancer(terminal) {
             }
 
         } else if (result === "version -terminal") {
-            terminal_ecrire(terminal, "Terminal version: 0.0.0.0b");
+            terminal_ecrire(terminal, "Terminal version: 0.0.0.0 - bêta");
         }
 
     } else {
