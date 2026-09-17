@@ -1,0 +1,67 @@
+/* === Variables === */
+:root {
+    /* Apparence */
+    --fond-terminal: black;
+    --fond-block: gray;
+    /* Texte */
+    --texte-color: white;
+    --texte-correct: green;
+    --texte-erreur: red;
+}
+
+/* === Balises général === */
+body {
+    /* Apparence */
+    font-family: 'Courier New', Courier, monospace;
+
+    /* Couleur */
+    background-color: var(--fond-terminal);
+    color: var(--texte-color);
+
+    /* Taille */
+    margin: 0;
+    height: 100vh;
+}
+
+/* === Classes === */
+.correct {
+    /* Apparence */
+    font-style: italic;
+
+    /* Couleur */
+    color: var(--texte-correct);
+}
+
+.erreur {
+    /* Apparence */
+    font-style: italic;
+
+    /* Couleur */
+    color: var(--texte-erreur);
+}
+
+#ligne,#oldligne {
+    /* Comportement */
+    display: flex;
+
+    /* Taille */
+    margin: 0;
+    padding: 0;
+    min-width: 100vh;
+    padding-left: 0.5%;
+}
+
+#input {
+    /* Apparence */
+    font-family: 'Courier New', Courier, monospace;
+    caret-shape: underscore;
+    outline: none;
+    border: none;
+
+    /* Couleur */
+    background-color: transparent;
+    color: var(--texte-color);
+    
+    /* Taille */
+    min-width: auto;
+}
