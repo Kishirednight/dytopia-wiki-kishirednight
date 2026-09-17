@@ -65,3 +65,36 @@ body {
     /* Taille */
     min-width: auto;
 }
+
+#header {
+    /* Comportement */
+    display: grid;
+
+    /* Apparence */
+    font-weight: 1000;
+
+    /* Couleur */
+    background-color: var(--fond-block);
+
+    /* Taille */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 1%;
+    margin: 0;
+}
+
+#footer {
+    /* Comportement */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    /* Apparence */
+    font-weight: 1000;
+
+    /* Couleur */
+    background-color: var(--fond-block);
+    
+
+    /* Taille */
+    padding: 1%;
+    margin: 0;
+}
