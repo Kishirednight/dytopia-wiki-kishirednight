@@ -21,6 +21,10 @@ body {
     /* Taille */
     margin: 0;
     height: 100vh;
+
+    /* Comportement */
+    display: flex;
+    flex-direction: column;
 }
 
 /* === Classes === */
@@ -68,6 +72,7 @@ body {
 
 #header {
     /* Apparence */
+    text-align: center;
     font-weight: 1000;
 
     /* Couleur */
@@ -82,6 +87,7 @@ body {
 
 #footer {
     /* Apparence */
+    text-align: center;
     font-weight: 1000;
 
     /* Couleur */
@@ -96,4 +102,8 @@ body {
 
 #footer,#header p:last-child {
     text-align: right;
+}
+
+#footer,#header p:first-child {
+    text-align: left;
 }
