@@ -18,8 +18,8 @@ async function init() {
 
         await WriteTerminal("Chargement du terminal...")
 
-        document.getElementById("header").style.display = block
-        document.getElementById("footer").style.display = block
+        document.getElementById("header").style.display = "block"
+        document.getElementById("footer").style.display = "block"
 
         return terminal()
     }

@@ -122,8 +122,6 @@ async function WriteTerminal(contenu, classe) {
         const ms = Math.floor(Math.random() * 20)
         await wait(ms)
     }
-    
-    console.log(texte)
 }
 
 // Fichier
