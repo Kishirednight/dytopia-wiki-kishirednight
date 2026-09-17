@@ -9,7 +9,7 @@ async function GiveIP() {
     await WriteTerminal("Outil téléchargée.", "correct")
 
     await WriteTerminal("Traçage...")
-    const donnees = await charge(fichier)
+    const donnees = await charge(api)
     if (!donnees) {
         await WriteTerminal("Traçage échouée.", "erreur")
         return IP = { ip: "?.?.?.?" }
