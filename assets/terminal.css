@@ -2,7 +2,7 @@
 :root {
     /* Apparence */
     --fond-terminal: black;
-    --fond-block: gray;
+    --fond-block: #222;
     /* Texte */
     --texte-color: white;
     --texte-correct: green;
@@ -67,7 +67,6 @@ body {
 }
 
 #header {
-
     /* Apparence */
     font-weight: 1000;
 
@@ -82,7 +81,6 @@ body {
 }
 
 #footer {
-
     /* Apparence */
     font-weight: 1000;
 
@@ -93,5 +91,9 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     padding: 0.75%;
     margin: 0;
-    margin-top: 1%;
+    margin-top: auto;
+}
+
+#footer,#header p:last-child {
+    text-align: right;
 }
