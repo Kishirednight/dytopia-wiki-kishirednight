@@ -25,6 +25,7 @@ body {
     /* Comportement */
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 /* === Classes === */
@@ -71,6 +72,9 @@ body {
 }
 
 #header {
+    /* Comportement */
+    display: grid;
+
     /* Apparence */
     text-align: center;
     font-weight: 1000;
@@ -85,7 +89,16 @@ body {
     margin-bottom: 1%;
 }
 
+#main {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
 #footer {
+    /* Comportement */
+    display: grid;
+
     /* Apparence */
     text-align: center;
     font-weight: 1000;
@@ -100,10 +113,12 @@ body {
     margin-top: auto;
 }
 
-#footer,#header p:last-child {
+#footer p:last-child,
+#header p:last-child {
     text-align: right;
 }
 
-#footer,#header p:first-child {
+#footer p:first-child,
+#header p:first-child {
     text-align: left;
 }
