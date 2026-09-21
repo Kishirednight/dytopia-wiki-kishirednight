@@ -11,4 +11,7 @@ async function terminal() {
     setInterval(function_horloge, 1000)
 
     // Script
+    if (boucle()) {
+        reset("")
+    }
 }
