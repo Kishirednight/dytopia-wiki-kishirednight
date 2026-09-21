@@ -6,8 +6,9 @@ async function boucle() {
         return true
     } if (!reponse) {
         await WriteTerminal("Rentrer une commande valide.")
-        boucle()
     } else {
         await WriteTerminal(`Commande écrite: ${reponse}`)
     }
+
+    boucle()
 }
