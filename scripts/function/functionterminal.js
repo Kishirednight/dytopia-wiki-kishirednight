@@ -10,5 +10,4 @@ async function boucle() {
     } else {
         await WriteTerminal(`Commande écrite: ${reponse}`)
     }
-
 }
