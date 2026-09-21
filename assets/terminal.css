@@ -71,6 +71,28 @@ body {
     min-width: auto;
 }
 
+#fenetre {
+    /* Comportement */
+    position: absolute;
+    overflow: auto;
+
+    /* Position */
+    top: 10%;
+    left: 10%;
+
+    /* Taille */
+    width: 60vw;
+    height: 60vh;
+    min-width: 30vw;
+    min-height: 20vh;
+    max-width: 90vw;
+    max-height: 90vh;
+
+    /* Couleur */
+    background-color: var(--fond-block);
+    color: var(--texte-color);
+}
+
 #header {
     /* Comportement */
     display: grid;
