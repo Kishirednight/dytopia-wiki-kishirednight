@@ -47,7 +47,7 @@ async function TrierDocument() {
         try {
             const fichier = await fetch(
                 `https://raw.githubusercontent.com/kishinight-production/explorateur-nexuria/main/${chemin}`
-            ) .then(contenu => contenu.text())
+            ).then(contenu => contenu.text())
 
 
             const yamls = extraire_yaml(fichier)

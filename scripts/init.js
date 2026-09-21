@@ -7,7 +7,7 @@ async function init() {
         } else { return reset("Error: Aucune données de LocalStorage.") }
 
         if (!localStorage.getItem("chemins")) {
-            const liste_fichier = TrierDocument()
+            const liste_fichier = await TrierDocument()
 
             if (!liste_fichier) {
                 return reset("Error: Un problème est survenue lors du chargement.")
