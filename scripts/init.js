@@ -16,6 +16,8 @@ async function init() {
             localStorage.setItem("chemins", liste_fichier)
         } else { await WriteTerminal("Chargement de la liste d'autorisation préconfigurer...") }
 
+        await WriteTerminal(localStorage.getItem("chemins"))
+
         await WriteTerminal("Chargement du terminal...")
 
         document.getElementById("header").style.display = "grid"
