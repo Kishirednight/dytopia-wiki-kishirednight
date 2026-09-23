@@ -66,7 +66,7 @@ function returnobject(fichier, nom) {
 
     liste_fichier = localStorage.getItem("chemins")
 
-    const resul = liste_fichier.find(elmt => elmt.chemins === fichier)
+    const resul = liste_fichier.find(elmt => elmt.chemin === fichier)
 
     console.log(resul.nom)
     return resul.nom
