@@ -51,14 +51,13 @@ async function run(fichier) {
     })
 
     // === Gestion du contenu === \\
-    fenetre.style.display = "block"
-
     const contenu = returnobject(fichier, "contenu")
 
-    console.log(contenu)
-
-    const block = document.createElement("div")
-    block.textContent = contenu
+    if (contenu) {
+        fenetre.style.display = "block"
+        const block = document.createElement("div")
+        block.textContent = contenu
+    }
 
 }
 
@@ -66,8 +65,11 @@ function returnobject(fichier, nom) {
 
     liste_fichier = localStorage.getItem("chemins")
 
-    const resul = liste_fichier.find(elmt => elmt.chemin === fichier)
+    liste_fichier.forEach(elmt => {
+        if (elmt === fichier) {
+            return resul.nom
+        }
+    })
 
-    console.log(resul.nom)
-    return resul.nom
+    return false
 }
