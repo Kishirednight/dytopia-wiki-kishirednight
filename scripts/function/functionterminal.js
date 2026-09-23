@@ -62,7 +62,6 @@ async function run(fichier) {
 }
 
 function returnobject(fichier, nom) {
-
     liste_fichier = localStorage.getItem("chemins")
 
     liste_fichier.forEach(elmt => {
