@@ -20,6 +20,8 @@ async function distribuer(reponse) {
 
     if (commande === "run") {
         await run(parametre)
+    } else {
+        await WriteTerminal("Aucune action n'as été faite.", "erreur")
     }
 }
 
@@ -50,4 +52,22 @@ async function run(fichier) {
 
     // === Gestion du contenu === \\
     fenetre.style.display = "block"
+
+    const contenu = returnobject(fichier, "contenu")
+
+    console.log(contenu)
+
+    const block = document.createElement("div")
+    block.textContent = contenu
+
+}
+
+function returnobject(fichier, nom) {
+
+    liste_fichier = localStorage.getItem("chemins")
+
+    const resul = liste_fichier.find(elmt => elmt.chemins === fichier)
+
+    console.log(resul.nom)
+    return resul.nom
 }
