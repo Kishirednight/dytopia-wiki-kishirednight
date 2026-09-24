@@ -13,7 +13,7 @@ async function init() {
                 return reset("Error: Un problème est survenue lors du chargement.")
             }
 
-            localStorage.setItem("chemins", liste_fichier)
+            localStorage.setItem("chemins", JSON.stringify(liste_fichier))
         } else { await WriteTerminal("Chargement de la liste d'autorisation préconfigurer...") }
 
         await WriteTerminal("Chargement du terminal...")
