@@ -6,19 +6,6 @@ async function ReturnInput() {
     return reponse
 }
 
-function verif(chemin_choisis) {
-    // Vérifie si un chemin se trouve dans la liste
-    liste_chemins = localStorage.getItem("chemins")
-
-    liste_chemins.forEach(elmt => {
-        if (elmt.chemin === chemin_choisis) {
-            return true
-        }
-    })
-
-    return false
-}
-
 function returnobject(fichier, nom) {
     liste_fichier = localStorage.getItem("chemins")
 

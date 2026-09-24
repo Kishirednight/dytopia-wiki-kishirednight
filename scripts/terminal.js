@@ -29,7 +29,7 @@ async function boucle() {
 
         // Distribution des commandes
         if (commande === "run") {
-            if (verif(parametre[0])) {
+            if (returnobject(parametre[0]), "chemin") {
                 // Récupération du contenu
                 const contenu = returnobject(parametre[0], "contenu")
 

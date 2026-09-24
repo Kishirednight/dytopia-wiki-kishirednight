@@ -54,7 +54,7 @@ async function TrierDocument() {
 
             if (yamls.tag === "") {
                 chemins.push({
-                    chemin,
+                    chemin: chemin,
                     date: yamls.date,
                     titre: yamls.title,
                     tag: yamls.tag,
@@ -63,7 +63,7 @@ async function TrierDocument() {
             } else if (tags.length > 0) {
                 for (const tag of tags) { if (tag === "perm+" || tag === yamls.tag) {
                     chemins.push({
-                        chemin,
+                        chemin: chemin,
                         date: yamls.date,
                         titre: yamls.title,
                         tag: yamls.tag,
