@@ -52,7 +52,7 @@ async function TrierDocument() {
 
             const yamls = extraire_yaml(fichier)
 
-            if (yamls.tag === "[]") {
+            if (yamls.tag === "") {
                 chemins.push({
                     chemin: chemin,
                     date: yamls.date,
