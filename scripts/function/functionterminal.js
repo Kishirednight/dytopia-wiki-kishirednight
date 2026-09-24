@@ -6,16 +6,16 @@ async function ReturnInput() {
     return reponse
 }
 
-function returnobject(fichier, nom) {
-    liste_fichier = localStorage.getItem("chemins")
+function ReturnObject(fichier, nom) {
+    const liste_fichier = JSON.parse(localStorage.getItem("chemins"));
 
-    liste_fichier.forEach(elmt => {
-        if (elmt === fichier) {
-            return resul.nom
+    for (const elmt of liste_fichier) {
+        if (elmt.chemin === fichier) {
+            return elmt.nom;
         }
-    })
+    }
 
-    return false
+    return false;
 }
 
 async function run(contenu) {
