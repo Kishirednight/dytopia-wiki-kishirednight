@@ -49,7 +49,6 @@ async function TrierDocument() {
                 `https://raw.githubusercontent.com/kishinight-production/explorateur-nexuria/main/${chemin}`
             ).then(contenu => contenu.text())
 
-
             const yamls = extraire_yaml(fichier)
 
             if (!yamls.tag) {

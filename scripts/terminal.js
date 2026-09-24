@@ -25,7 +25,8 @@ async function boucle() {
     const reponse = await ReturnInput()
 
     if (reponse === "stop") {
-        return true
+        await WriteTerminal("Rechargement de la page...")
+        location.reload()
     } if (!reponse) {
         await WriteTerminal("Rentrer une valeur non nulle.", "erreur")
     } else {
