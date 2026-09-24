@@ -40,7 +40,7 @@ async function TrierDocument() {
 
     const chemins = []
     let nombre = 0
-    const tags = localStorage.getItem("tag")
+    const tags = JSON.parse(localStorage.getItem("tag") || "[]")
 
     for (const chemin of contenu) {
         await WriteTerminal(`Téléchargement et chargement du contenu du fichier n°${nombre + 1}...`)
@@ -52,7 +52,7 @@ async function TrierDocument() {
 
             const yamls = extraire_yaml(fichier)
 
-            if (yamls.tag === "") {
+            if (yamls.tag === "[]") {
                 chemins.push({
                     chemin: chemin,
                     date: yamls.date,

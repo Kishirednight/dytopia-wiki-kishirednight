@@ -7,7 +7,7 @@ async function ReturnInput() {
 }
 
 function ReturnObject(fichier, nom) {
-    const liste_fichier = JSON.parse(localStorage.getItem("chemins"));
+    const liste_fichier = JSON.parse(localStorage.getItem("chemins"))
 
     for (const elmt of liste_fichier) {
         if (elmt.chemin === fichier) {

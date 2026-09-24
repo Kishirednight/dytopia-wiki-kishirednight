@@ -34,7 +34,7 @@ async function connexion() {
                 return reset("Error: Mauvais mot de passe.")
             }
 
-            localStorage.setItem("tag", ligne.tag)
+            localStorage.setItem("tag", JSON.stringify(ligne.tag))
             localStorage.setItem("nom", ligne.nom)
             localStorage.setItem("id", ligne.id)
 
