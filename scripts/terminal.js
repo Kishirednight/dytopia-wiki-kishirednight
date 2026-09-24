@@ -15,3 +15,33 @@ async function terminal() {
         reset("")
     }
 }
+
+async function boucle() {
+    const reponse = await ReturnInput()
+
+    if (reponse === "stop") {
+        return true
+    } if (!reponse) {
+        await WriteTerminal("Rentrer une valeur non nulle.", "erreur")
+    } else {
+        const commande = reponse.split(" ")[0].trim().toLowerCase()
+        const parametre = reponse.split("").slice(1)
+
+        // Distribution des commandes
+        if (commande === "run") {
+            if (verif(parametre[0])) {
+                // Récupération du contenu
+                const contenu = returnobject(parametre[0], "contenu")
+
+                run(contenu)
+
+            } else {
+                WriteTerminal("Le chemin n'existe pas.", "erreur")
+            }
+        } else {
+            WriteTerminal("Commande non valide.", "erreur")
+        }
+    }
+
+    boucle()
+}
