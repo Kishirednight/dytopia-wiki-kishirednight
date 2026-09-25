@@ -45,13 +45,14 @@ async function TrierDocument() {
     for (const chemin of contenu) {
         await WriteTerminal(`Téléchargement et chargement du contenu du fichier n°${nombre + 1}...`)
         try {
-            const fichier = await fetch(
+            const reponse = await fetch(
                 `https://raw.githubusercontent.com/kishinight-production/explorateur-nexuria/main/${chemin}`
-            ).then(contenu => contenu.text())
+            )
 
             if (!fichier.ok) {
                 await WriteTerminal("Le chemin n'as pas pu être chargé", "erreur")
             } else {
+                const fichier = reponse.text()
                 const yamls = extraire_yaml(fichier)
 
                 if (!yamls.tag) {

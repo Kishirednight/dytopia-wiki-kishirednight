@@ -32,11 +32,11 @@ async function boucle() {
         await WriteTerminal("Rentrer une valeur non nulle.", "erreur")
     } else {
         const commande = reponse.split(" ")[0].trim().toLowerCase()
-        const parametre = reponse.split("").slice(1)
+        const parametre = reponse.split(" ").slice(1)
 
         // Distribution des commandes
         if (commande === "run") {
-            if (ReturnObject(parametre[0]), "chemin") {
+            if (ReturnObject(parametre[0], "chemin")) {
                 // Récupération du contenu
                 const contenu = ReturnObject(parametre[0], "contenu")
 

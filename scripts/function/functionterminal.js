@@ -11,7 +11,7 @@ function ReturnObject(fichier, nom) {
 
     for (const elmt of liste_fichier) {
         if (elmt.chemin === fichier) {
-            return elmt.nom;
+            return elmt[nom]
         }
     }
 
@@ -46,4 +46,7 @@ async function run(contenu) {
     fenetre.style.display = "block"
     const block = document.createElement("div")
     block.textContent = contenu
+
+    fenetre.innerHTML = ""
+    fenetre.appendChild(block)
 }
