@@ -50,3 +50,14 @@ async function run(contenu) {
     fenetre.innerHTML = ""
     fenetre.appendChild(block)
 }
+
+async function list() {
+    const liste_fichier = JSON.parse(localStorage.getItem("chemins"))
+    let num = 1
+
+    await WriteTerminal("Documents disponibles:")
+
+    for (const fichier of liste_fichier) {
+        await WriteTerminal(`${num} - ${fichier["chemin"]}`)
+    }
+}

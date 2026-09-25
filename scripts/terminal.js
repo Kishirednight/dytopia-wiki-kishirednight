@@ -40,10 +40,12 @@ async function boucle() {
                 // Récupération du contenu
                 const contenu = ReturnObject(parametre[0], "contenu")
 
-                run(contenu)
+                await run(contenu)
             } else {
                 WriteTerminal("Le chemin n'existe pas.", "erreur")
             }
+        } else if (commande === "list") {
+            await list()
         } else {
             WriteTerminal("Commande non valide.", "erreur")
         }

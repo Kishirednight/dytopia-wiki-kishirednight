@@ -87,6 +87,7 @@ body {
     min-height: 20vh;
     max-width: 90vw;
     max-height: 90vh;
+    padding: 1%;
 
     /* Couleur */
     opacity: 0.8;
