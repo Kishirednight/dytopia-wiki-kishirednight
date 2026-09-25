@@ -49,18 +49,12 @@ async function TrierDocument() {
                 `https://raw.githubusercontent.com/kishinight-production/explorateur-nexuria/main/${chemin}`
             ).then(contenu => contenu.text())
 
-            const yamls = extraire_yaml(fichier)
+            if (!fichier.ok) {
+                await WriteTerminal("Le chemin n'as pas pu être chargé", "erreur")
+            } else {
+                const yamls = extraire_yaml(fichier)
 
-            if (!yamls.tag) {
-                chemins.push({
-                    chemin: chemin,
-                    date: yamls.date,
-                    titre: yamls.title,
-                    tag: yamls.tag,
-                    contenu: fichier
-                })
-            } else if (tags.length > 0) {
-                for (const tag of tags) { if (tag === "perm+" || tag === yamls.tag) {
+                if (!yamls.tag) {
                     chemins.push({
                         chemin: chemin,
                         date: yamls.date,
@@ -68,11 +62,20 @@ async function TrierDocument() {
                         tag: yamls.tag,
                         contenu: fichier
                     })
-                    await WriteTerminal(`Fichier n°${nombre + 1} accordé.`, "correct")
-                    break
-                }}
-            } else { await WriteTerminal(`Fichier n°${nombre + 1} non accordé.`, "erreur") }
-        }
+                } else if (tags.length > 0) {
+                    for (const tag of tags) { if (tag === "perm+" || tag === yamls.tag) {
+                        chemins.push({
+                            chemin: chemin,
+                            date: yamls.date,
+                            titre: yamls.title,
+                            tag: yamls.tag,
+                            contenu: fichier
+                        })
+                        await WriteTerminal(`Fichier n°${nombre + 1} accordé.`, "correct")
+                        break
+                    }}
+                } else { await WriteTerminal(`Fichier n°${nombre + 1} non accordé.`, "erreur") }
+        }}
         catch(error) {
             await WriteTerminal(`Erreur d'un chargement d'un fichier.`, "erreur")
             await WriteTerminal(error, "erreur")
