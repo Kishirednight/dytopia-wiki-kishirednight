@@ -52,7 +52,7 @@ async function TrierDocument() {
             if (!reponse.ok) {
                 await WriteTerminal("Le chemin n'as pas pu être chargé", "erreur")
             } else {
-                const fichier = reponse.text()
+                const fichier = await reponse.text()
                 const yamls = extraire_yaml(fichier)
 
                 if (!yamls.tag) {
