@@ -49,7 +49,7 @@ async function TrierDocument() {
                 `https://raw.githubusercontent.com/kishinight-production/explorateur-nexuria/main/${chemin}`
             )
 
-            if (!fichier.ok) {
+            if (!reponse.ok) {
                 await WriteTerminal("Le chemin n'as pas pu être chargé", "erreur")
             } else {
                 const fichier = reponse.text()
