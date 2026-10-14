@@ -40,7 +40,9 @@ async function boucle() {
                 // Récupération du contenu
                 const contenu = ReturnObject(parametre[0], "contenu")
 
-                await run(contenu)
+                const contenu_f = await HtmlContenu(contenu)
+
+                await run(contenu_f)
             } else {
                 WriteTerminal("Le chemin n'existe pas.", "erreur")
             }
