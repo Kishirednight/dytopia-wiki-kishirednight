@@ -20,40 +20,40 @@ function ReturnObject(fichier, nom) {
 
 async function HtmlContenu(contenu) {
     // Bloc YAML (Supprimer)
-    texte = texte.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "");
+    contenu = contenu.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "")
 
     // Titres (En <hX>)
-    texte = texte.replace(
+    contenu = contenu.replace(
         /^###### (.+)$/gm, "<h6>$1</h6>"
-    );
-    texte = texte.replace(
+    )
+    contenu = contenu.replace(
         /^##### (.+)$/gm, "<h5>$1</h5>"
-    );
-    texte = texte.replace(
+    )
+    contenu = contenu.replace(
         /^#### (.+)$/gm, "<h4>$1</h4>"
-    );
-    texte = texte.replace(
+    )
+    contenu = contenu.replace(
         /^### (.+)$/gm, "<h3>$1</h3>"
-    );
-    texte = texte.replace(
+    )
+    contenu = contenu.replace(
         /^## (.+)$/gm, "<h2>$1</h2>"
-    );
-    texte = texte.replace(
+    )
+    contenu = contenu.replace(
         /^# (.+)$/gm, "<h1>$1</h1>"
-    );
+    )
 
     // Gras (en <b>)
-    texte = texte.replace(
+    contenu = contenu.replace(
         /\*\*(.+?)\*\*/g, "<b>$1</b>"
-    );
+    )
 
     // Italique (en <i>)
-    texte = texte.replace(
+    contenu = contenu.replace(
         /(?<!\*)\*([^*\n]+)\*(?!\*)/g, "<i>$1</i>"
-    );
+    )
 
     // Listes (en <ul> et <li>)
-    texte = texte.replace(
+    contenu = contenu.replace(
         /^(?:- .+(?:\r?\n|$))+/gm,
         bloc => {
             const elements = bloc.trim().split(/\r?\n/);
@@ -62,14 +62,14 @@ async function HtmlContenu(contenu) {
                 elements.map(element =>
                     "<li>" + element.slice(2) + "</li>"
                 ).join("") +
-                "</ul>";
+                "</ul>"
         }
-    );
+    )
 
     // Saut de ligne (en <br>)
-    texte = texte.replace(/\r?\n/g, "<br>");
+    contenu = contenu.replace(/\r?\n/g, "<br>")
 
-    return texte;
+    return contenu
 }
 
 async function run(contenu) {
