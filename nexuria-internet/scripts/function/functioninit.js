@@ -44,7 +44,7 @@ async function TrierDocument() {
     const tags = JSON.parse(localStorage.getItem("tag") || "[]")
 
     for (const chemin of contenu) {
-        nombre + 1
+        nombre += 1
         await WriteTerminal(`Téléchargement et chargement du contenu du fichier n°${nombre}...`)
         try {
             const reponse = await fetch(
