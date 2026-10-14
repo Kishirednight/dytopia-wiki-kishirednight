@@ -72,10 +72,7 @@ async function HtmlContenu(contenu) {
     return contenu
 }
 
-async function run(contenu) {
-    // Ouvre un document et son contenu
-    const fenetre = document.getElementById("fenetre")
-
+async function run(contenu, fenetre) {
     // === Gestion d'une vrai fenetre === \\\
     let deplacement = false
     let decalageX = 0

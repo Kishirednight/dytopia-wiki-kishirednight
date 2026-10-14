@@ -41,13 +41,18 @@ async function boucle() {
                 const contenu = ReturnObject(parametre[0], "contenu")
 
                 const contenu_f = await HtmlContenu(contenu)
+                const page = document.getElementById("fenetre")
 
-                await run(contenu_f)
+                await run(contenu_f, page)
             } else {
                 WriteTerminal("Le chemin n'existe pas.", "erreur")
             }
         } else if (commande === "list") {
             await list()
+        } else if (commande == "close") {
+            const page = document.getElementById("fenetre")
+
+            fenetre.style.display = "none"
         } else {
             WriteTerminal("Commande non valide.", "erreur")
         }
