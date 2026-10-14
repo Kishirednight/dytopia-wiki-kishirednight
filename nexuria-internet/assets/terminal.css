@@ -27,6 +27,20 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
+/* === Balises document === */
+#fenetre h1 {
+    color: #500;
+    text-decoration: underline;
+    text-decoration: solid;
+}
+
+#fenetre h2,h3 {
+    text-decoration: solid;
+}
+
+#fenetre i {
+    color: #AAA;
+}
 
 /* === Classes === */
 .correct {
