@@ -110,5 +110,6 @@ async function list() {
 
     for (const fichier of liste_fichier) {
         await WriteTerminal(`${num} - ${fichier["chemin"]}`)
+        num += 1
     }
 }
