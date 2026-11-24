@@ -53,6 +53,8 @@ async function boucle() {
             const page = document.getElementById("fenetre")
 
             fenetre.style.display = "none"
+        } else if (commande =="help") {
+            await help()
         } else {
             WriteTerminal("Commande non valide.", "erreur")
         }
