@@ -48,13 +48,17 @@ async function boucle() {
                 WriteTerminal("Le chemin n'existe pas.", "erreur")
             }
         } else if (commande === "list") {
-            await list()
+            const liste_fichier = JSON.parse(localStorage.getItem("chemins"))
+
+            await enumerate(liste_fichier, "Documents disponibles:")
         } else if (commande == "close") {
             const page = document.getElementById("fenetre")
 
             fenetre.style.display = "none"
         } else if (commande =="help") {
-            await help()
+            const liste_cmds = ["list", "stop", "run"]
+
+            await enumerate(liste_cmds, "Commandes disponibles:")
         } else {
             WriteTerminal("Commande non valide.", "erreur")
         }

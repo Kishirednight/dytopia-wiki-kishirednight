@@ -102,22 +102,13 @@ async function run(contenu, fenetre) {
     fenetre.appendChild(block)
 }
 
-async function list() {
-    const liste_fichier = JSON.parse(localStorage.getItem("chemins"))
-    let num = 1
+async function enumerate(objets, str_info) {
+    let num = 0
 
-    await WriteTerminal("Documents disponibles:")
+    await WriteTerminal(`${str_info}`)
 
-    for (const fichier of liste_fichier) {
-        await WriteTerminal(`${num} - ${fichier["chemin"]}`)
+    for (const objet of objets) {
         num += 1
-    }
-}
-
-async function help() {
-    const cmds = ["Stop", "List", "Run"]
-
-    for (const cmd of cmds) {
-        await WriteTerminal(`-${cmd}`)
+        await WriteTerminal(`${num} - ${objet}`)
     }
 }
