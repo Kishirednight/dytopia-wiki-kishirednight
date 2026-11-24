@@ -113,3 +113,11 @@ async function list() {
         num += 1
     }
 }
+
+async function help() {
+    const cmds = ["Stop", "List", "Run"]
+
+    for (const cmd of cmds) {
+        await WriteTerminal(`-${cmd}`)
+    }
+}
