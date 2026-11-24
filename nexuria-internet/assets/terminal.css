@@ -27,6 +27,7 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
+
 /* === Balises document === */
 #fenetre h1 {
     color: #500;

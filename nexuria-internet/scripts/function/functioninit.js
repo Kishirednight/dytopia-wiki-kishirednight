@@ -32,7 +32,6 @@ async function TrierDocument() {
     if (!contenu) {
         return false
     } else {
-    console.log(contenu)
     await WriteTerminal("Chargement réussi.", "correct")
 
     // Trier document
