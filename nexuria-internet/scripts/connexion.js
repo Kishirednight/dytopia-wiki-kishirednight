@@ -1,5 +1,5 @@
 // Scripts
-localStorage.setItem("version", `V 1.0.1.O`)
+localStorage.setItem("version", `V 1.0.1.1`)
 
 try {
     connexion()
