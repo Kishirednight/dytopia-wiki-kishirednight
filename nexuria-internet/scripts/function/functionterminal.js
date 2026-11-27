@@ -109,6 +109,6 @@ async function enumerate(objets, str_info) {
 
     for (const objet of objets) {
         num += 1
-        await WriteTerminal(`${num} - ${objet}`)
+        await WriteTerminal(`${num} - ${objet.chemin}`)
     }
 }
